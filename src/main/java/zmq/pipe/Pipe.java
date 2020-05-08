@@ -80,6 +80,9 @@ public class Pipe extends ZObject
     //  Identity of the writer. Used uniquely by the reader side.
     private Blob identity;
 
+    //  Routing id of the writer. Used uniquely by the reader side.
+    private int routingId;
+
     //  Pipe's credential.
     private Blob credential;
 
@@ -165,6 +168,13 @@ public class Pipe extends ZObject
     {
         return identity;
     }
+
+    public void setRoutingId(int routingId)
+    {
+        this.routingId = routingId;
+    }
+
+    public int getRoutingId() { return routingId; }
 
     public Blob getCredential()
     {

@@ -54,6 +54,9 @@ public class ZMQ
     public static final int ZMQ_XPUB   = 9;
     public static final int ZMQ_XSUB   = 10;
     public static final int ZMQ_STREAM = 11;
+    public static final int ZMQ_SERVER = 12;
+    public static final int ZMQ_CLIENT = 13;
+
 
     /*  Deprecated aliases                                                        */
     @Deprecated
@@ -591,6 +594,19 @@ public class ZMQ
         }
         return data;
     }
+
+    //  Set routing id on a message sent over SERVER socket type
+    public boolean setMessageRoutingId(Msg msg, int routingId)
+    {
+        return msg.setRoutingId(routingId);
+    }
+
+    //  Get the routing id of a message that came from SERVER socket type
+    public int getMessageRoutingId(Msg msg)
+    {
+        return msg.getRoutingId();
+    }
+
 
     public static void sleep(long seconds)
     {
